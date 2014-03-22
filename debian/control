@@ -1,0 +1,23 @@
+Source: quasi-engine
+Priority: extra
+Maintainer: Ken VanDine <ken.vandine@ubuntu.com>
+Build-Depends: debhelper (>= 9),
+               libbox2d-dev,
+               pkg-config,
+               qt5-default,
+               qtbase5-dev,
+               qtdeclarative5-dev,
+               qtdeclarative5-qtquick2-plugin,
+Standards-Version: 3.9.5
+Section: libs
+Homepage:  http://indt.github.io/Quasi-Engine
+
+Package: qtdeclarative5-quasi1.0
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+Description: 2D Game Engine for QML
+ Quasi Engine is a framework that intends to be a complete toolset to ease 2d 
+ game development, providing ready-to-use QML elements representing basic 
+ game entities needed by most of games.
