@@ -43,6 +43,7 @@
 #include "line.h"
 #include "fixture.h"
 #include "material.h"
+#include "tiledscene.h"
 
 void Plugins::registerTypes(const char *uri)
 {
@@ -73,4 +74,5 @@ void Plugins::registerTypes(const char *uri)
     qmlRegisterType<Line>("QuasiGame", 1, 0, "QuasiLine");
     qmlRegisterType<Material>("QuasiGame", 1, 0, "QuasiMaterial");
     qmlRegisterType<Fixture>("QuasiGame", 1, 0, "QuasiFixture");
+    qmlRegisterType<TiledScene>("QuasiGame", 1, 0, "QuasiTiledScene");
 }

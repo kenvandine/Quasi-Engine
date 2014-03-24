@@ -11,4 +11,5 @@ SUBDIRS += imagelayer \
            updateInterval \
            manysprites \
            behaviorchange \
-           box2ddistancejoints
+           box2ddistancejoints \
+           tiledscene

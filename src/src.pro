@@ -19,6 +19,8 @@ INCLUDEPATH += .
 INCLUDEPATH += $$BOX2DPATH/include
 LIBS += -L$$BOX2DPATH/lib -lBox2D
 
+include($$PWD/tmx/tmx.pri)
+
 HEADERS += quasideclarativeitem.h \
            quasipainteditem.h \
            entity.h \
@@ -53,7 +55,8 @@ HEADERS += quasideclarativeitem.h \
            circle.h \
            line.h \
            fixture.h \
-           material.h
+           material.h \
+           tiledscene.h
 
 SOURCES += entity.cpp \
            scene.cpp \
@@ -85,7 +88,8 @@ SOURCES += entity.cpp \
            polygon.cpp \
            polyline.cpp \
            fixture.cpp \
-           material.cpp
+           material.cpp \
+           tiledscene.cpp
 
 QMAKE_POST_LINK = $$QMAKE_COPY $$PWD/qmldir $$OUT_PWD/imports/QuasiGame
 
