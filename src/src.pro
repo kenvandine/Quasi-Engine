@@ -19,6 +19,10 @@ INCLUDEPATH += .
 INCLUDEPATH += $$BOX2DPATH/include
 LIBS += -L$$BOX2DPATH/lib -lBox2D
 
+INCLUDEPATH += $$PWD/..
+LIBS += -L$$OUT_PWD/../libtiled -ltiled
+
+include(../libtiled/libtiled.pri)
 include($$PWD/tmx/tmx.pri)
 
 HEADERS += quasideclarativeitem.h \

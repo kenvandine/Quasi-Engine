@@ -1,12 +1,4 @@
-TEMPLATE = subdirs
-
 INCLUDEPATH += $$PWD
-
-include($$PWD/libtiled/libtiled.pri)
-
-SUBDIRS += tmx/libtiled
-
-LIBS += -L$$PWD -ltiled
 
 HEADERS += \
     $$PWD/tmximagelayer.h \
