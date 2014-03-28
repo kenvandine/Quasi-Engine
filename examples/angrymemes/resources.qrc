@@ -1,0 +1,10 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+    <file>GameWindow.qml</file>
+    <file>alone.png</file>
+    <file>background.png</file>
+    <file>enemy.png</file>
+    <file>trollface.png</file>
+    <file>wood.jpg</file>
+</qresource>
+</RCC>
