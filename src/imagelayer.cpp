@@ -234,6 +234,10 @@ void ImageLayer::updateTiles()
 
     // TODO create enums to define image aspect, auto tile, etc...
     QPixmap pixmap(source()); // TODO
+    // If item height doesn't match pixmap height, scaleToHeight
+    if (pixmap.height() != (int)height()) {
+        pixmap = pixmap.scaledToHeight(height()); 
+    }
 
     if (m_drawType == Quasi::PlaneDrawType) {
         m_tileWidth = width();
@@ -399,16 +403,8 @@ void ImageLayer::onHorizontalDirectionChanged()
         m_columnOffset = (m_columnOffset + 2) % m_offsets.size();
 }
 
-#if QT_VERSION >= 0x050000
 void ImageLayer::paint(QPainter *painter)
 {
-#else
-void ImageLayer::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
-{
-    Q_UNUSED(option)
-    Q_UNUSED(widget)
-#endif
-
     if (!m_currentImage)
         return;
 

@@ -21,11 +21,7 @@
 
 #include "scriptbehavior.h"
 
-#if QT_VERSION >= 0x050000
 #include <QtQml/QQmlExpression>
-#else
-#include <QtDeclarative/QDeclarativeExpression>
-#endif
 
 ScriptBehavior::ScriptBehavior(QObject *parent)
     : Behavior(parent)
@@ -41,33 +37,19 @@ void ScriptBehavior::update(const int &delta) {
     }
 }
 
-#if QT_VERSION >= 0x050000
 QQmlScriptString ScriptBehavior::script() const
-#else
-QDeclarativeScriptString ScriptBehavior::script() const
-#endif
 {
     return m_script;
 }
 
-#if QT_VERSION >= 0x050000
 void ScriptBehavior::setScript(const QQmlScriptString &script)
-#else
-void ScriptBehavior::setScript(const QDeclarativeScriptString &script)
-#endif
 {
-    if (m_script.stringLiteral() != script.stringLiteral()) {
-        m_script = script;
+    m_script = script;
 
-        if (m_expression)
-            delete m_expression;
+    if (m_expression)
+        delete m_expression;
 
-#if QT_VERSION >= 0x050000
-        m_expression = new QQmlExpression(m_script);
-#else
-        m_expression = new QDeclarativeExpression(m_script.context(), m_script.scopeObject(), m_script.script());
-#endif
+    m_expression = new QQmlExpression(m_script);
 
-        emit scriptChanged();
-    }
+    emit scriptChanged();
 }
